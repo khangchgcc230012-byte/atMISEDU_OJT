@@ -20,7 +20,22 @@ namespace atMISEDU.Contract.Enumerations
 
         #region CATALOG
         ERR_CATALOG_CATALOG_UNIT_INVALID,
-        ERR_CATALOG_CATALOG_UNIT_ID_NOT_FOUND
+        ERR_CATALOG_CATALOG_UNIT_ID_NOT_FOUND,
+        #endregion
+
+        #region CollectionArticles msg codes
+        ERR_COLLECTION_ARTICLES_INVALID,
+        ERR_COLLECTION_ARTICLES_ID_NOT_FOUND,
+        #endregion
+
+        #region CollectionTags msg codes
+        ERR_COLLECTION_TAGS_INVALID,
+        ERR_COLLECTION_TAGS_ID_NOT_FOUND,
+        #endregion
+
+        #region CollectionAwardCatalog msg codes
+        ERR_COLLECTION_AWARD_CATALOG_INVALID,
+        ERR_COLLECTION_AWARD_CATALOG_ID_NOT_FOUND,
         #endregion
     }
 }
