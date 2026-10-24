@@ -1,3 +1,5 @@
+using atMISEDU.Application;
+using atMISEDU.Application; 
 using atMISEDU.Contract.Constants;
 using atMISEDU.Domain.Abstractions.Repositories.Sql.Base;
 using atMISEDU.Domain.Abstractions.Repositories.Sql.CATALOG;
@@ -23,6 +25,10 @@ namespace atMISEDU.Persistence.DependencyInjection.Extensions
         {
             string? connectionString = configuration.GetConnectionString(Const.CONN_CONFIG_SQL);
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+            // Register IApplicationDbContext mapping to ApplicationDbContext
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+
             services.RegisterServices();
             return services;
         }

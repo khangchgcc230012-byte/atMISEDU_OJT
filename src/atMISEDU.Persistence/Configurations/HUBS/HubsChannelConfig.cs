@@ -12,12 +12,21 @@ namespace atMISEDU.Persistence.Configurations.HUBS
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName(HubsChannelConst.FIELD_ID);
+
             builder.Property(x => x.CnName).HasColumnName(HubsChannelConst.FIELD_CN_NAME);
             builder.Property(x => x.CnUrl).HasColumnName(HubsChannelConst.FIELD_CN_URL);
             builder.Property(x => x.CnIcon).HasColumnName(HubsChannelConst.FIELD_CN_ICON);
             builder.Property(x => x.CnStyle).HasColumnName(HubsChannelConst.FIELD_CN_STYLE);
-            builder.Property(x => x.CnOrder).HasColumnName(HubsChannelConst.FIELD_CN_ORDER);
-            builder.Property(x => x.IsActived).HasColumnName(HubsChannelConst.FIELD_IS_ACTIVED);
+
+            // Cấu hình rõ ràng kiểu byte cho thuộc tính mapping với cột TINYINT
+            builder.Property(x => x.CnOrder)
+                   .HasColumnName(HubsChannelConst.FIELD_CN_ORDER)
+                   .HasColumnType("tinyint");
+
+            builder.Property(x => x.IsActived)
+                   .HasColumnName(HubsChannelConst.FIELD_IS_ACTIVED)
+                   .HasColumnType("tinyint");
+
             builder.ToTable(TableConst.TABLE_HUBS_CHANNEL);
         }
     }

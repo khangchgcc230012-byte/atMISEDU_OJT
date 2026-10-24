@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace atMISEDU.Persistence.Configurations.CATALOG
 {
-    public class CatalogUnitConfiguration : IEntityTypeConfiguration<CatalogUnit>
+    public class CatalogUnitConfig : IEntityTypeConfiguration<CatalogUnit>
     {
         public void Configure(EntityTypeBuilder<CatalogUnit> builder)
         {
@@ -17,6 +17,7 @@ namespace atMISEDU.Persistence.Configurations.CATALOG
             builder.Property(x => x.UnitCode).HasColumnName(CatalogUnitConst.FIELD_UNIT_CODE);
             builder.Property(x => x.UnitName).HasColumnName(CatalogUnitConst.FIELD_UNIT_NAME);
             builder.Property(x => x.UnitEnglish).HasColumnName(CatalogUnitConst.FIELD_UNIT_ENGLISH);
+            builder.Property(x => x.IsActived).HasColumnName("isActived");
 
             builder.ToTable(TableConst.TABLE_CATALOG_UNIT);
         }

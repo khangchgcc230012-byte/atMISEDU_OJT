@@ -1,6 +1,10 @@
-﻿using System.Reflection;
+﻿using atMISEDU.Application;
 using atMISEDU.Domain.Abstractions.Entities;
+using atMISEDU.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+// Ensure you include the namespace where ArticleInteraction entity is defined
+// e.g., using atMISEDU.Domain.Entities;
 
 namespace atMISEDU.Persistence
 {
@@ -8,8 +12,12 @@ namespace atMISEDU.Persistence
     /// Application database context 
     /// </summary>
     /// <param name="options">Options for database context</param>
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options), IApplicationDbContext
     {
+        // Declare DbSets defined in IApplicationDbContext
+        public DbSet<ArticleInteraction> ArticleInteractions { get; set; }
+        public DbSet<ArticleDiscussionInteraction> ArticleDiscussionInteractions { get; set; }
+        public DbSet<ArticleVote> ArticleVotes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -5,11 +5,11 @@ using atMISEDU.Presentation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Dang ky Controllers va Presentation Assembly
+
 builder.Services.AddControllers()
                 .AddApplicationPart(typeof(AssemblyReference).Assembly);
 
-// 2. Dang ky API Versioning (Fix loi constraint 'apiVersion')
+
 builder.Services.AddApiVersioning(options =>
 {
     options.DefaultApiVersion = new ApiVersion(1, 0);
@@ -22,17 +22,17 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 
-// 3. Dang ky Swagger
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 4. Dang ky cac tang Clean Architecture
+
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
 
 var app = builder.Build();
 
-// 5. Cấu hình Middleware Swagger
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
