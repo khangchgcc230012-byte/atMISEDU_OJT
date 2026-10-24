@@ -9,6 +9,10 @@ namespace atMISEDU.Domain.Entities.HUBS
         public string? CnIcon { get; set; }
         public string? CnStyle { get; set; }
         public int CnOrder { get; set; }
+<<<<<<< HEAD
         public int IsActived { get; set; }
+=======
+        public byte IsActived { get; set; }
+>>>>>>> feature/hubs-channel-full
     }
 }
