@@ -52,7 +52,7 @@ namespace atMISEDU.Persistence.DependencyInjection.Extensions
             services.AddScoped<ICollectionTagsSqlRepository, CollectionTagsSqlRepository>();
             services.AddScoped<ICollectionAwardCatalogSqlRepository, CollectionAwardCatalogSqlRepository>();
             #endregion
-
+            services.AddScoped<ICollectionTagsSqlRepository, CollectionTagsSqlRepository>();
             return services;
         }
     }

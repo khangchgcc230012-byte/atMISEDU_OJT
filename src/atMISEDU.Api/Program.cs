@@ -1,5 +1,5 @@
 using Asp.Versioning;
-using atMISEDU.Application.DependencyInjection.Extensions;
+using atMISEDU.Application.DependencyInjection.Extension;
 using atMISEDU.Persistence.DependencyInjection.Extensions;
 using atMISEDU.Presentation;
 
