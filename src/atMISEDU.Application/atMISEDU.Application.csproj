@@ -8,7 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\atMISEDU.Domain\atMISEDU.Domain.csproj"/>
+        <ProjectReference Include="..\atMISEDU.Domain\atMISEDU.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="UseCases\" />
     </ItemGroup>
 
 </Project>

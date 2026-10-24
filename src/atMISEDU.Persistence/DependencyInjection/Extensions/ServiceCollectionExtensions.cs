@@ -1,9 +1,11 @@
 using atMISEDU.Contract.Constants;
 using atMISEDU.Domain.Abstractions.Repositories.Sql.Base;
 using atMISEDU.Domain.Abstractions.Repositories.Sql.CATALOG;
+using atMISEDU.Domain.Abstractions.Repositories.Sql.Collections;
 using atMISEDU.Domain.Abstractions.Repositories.Sql.HUBS;
 using atMISEDU.Persistence.Repositories.Sql.Base;
 using atMISEDU.Persistence.Repositories.Sql.CATALOG;
+using atMISEDU.Persistence.Repositories.Sql.Collections;
 using atMISEDU.Persistence.Repositories.Sql.HUBS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -48,7 +50,7 @@ namespace atMISEDU.Persistence.DependencyInjection.Extensions
             services.AddScoped<IHubsChannelSqlRepository, HubsChannelSqlRepository>();
 
             #endregion
-
+            services.AddScoped<ICollectionTagsSqlRepository, CollectionTagsSqlRepository>();
             return services;
         }
     }
