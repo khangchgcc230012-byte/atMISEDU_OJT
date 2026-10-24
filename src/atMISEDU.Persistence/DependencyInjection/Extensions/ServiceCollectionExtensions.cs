@@ -40,15 +40,17 @@ namespace atMISEDU.Persistence.DependencyInjection.Extensions
             services.AddScoped<ISqlUnitOfWork, SqlUnitOfWork>();
 
             #region CATALOG
-
             services.AddScoped<ICatalogUnitSqlRepository, CatalogUnitSqlRepository>();
-
             #endregion
 
             #region HUBS
-
             services.AddScoped<IHubsChannelSqlRepository, HubsChannelSqlRepository>();
+            #endregion
 
+            #region COLLECTIONS
+            services.AddScoped<ICollectionArticlesSqlRepository, CollectionArticlesSqlRepository>();
+            services.AddScoped<ICollectionTagsSqlRepository, CollectionTagsSqlRepository>();
+            services.AddScoped<ICollectionAwardCatalogSqlRepository, CollectionAwardCatalogSqlRepository>();
             #endregion
             services.AddScoped<ICollectionTagsSqlRepository, CollectionTagsSqlRepository>();
             return services;
